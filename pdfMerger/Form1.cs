@@ -24,12 +24,22 @@ namespace pdfMerger
         {
 
         }
+        // creates a open file dialog box
         OpenFileDialog ofd = new OpenFileDialog();
         private void open_Click(object sender, EventArgs e)
         {
-             if (ofd.ShowDialog() == DialogResult.OK)
+            //Set the open file dialog box for graphical files
+            this.ofd.Filter = "Images (*.BMP;*.JPG;*.GIF;*.PDF)|*.BMP;*.JPG;*.GIF;*.PDF|" +
+        "All files (*.*)|*.*";
+            //Set multi select option to be true
+            this.ofd.Multiselect = true;
+            this.ofd.Title = "Select Files to Merge";
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                comboBox1.Items.Add(ofd.FileName);
+                foreach (String file in ofd.FileNames)
+                {
+                    comboBox1.Items.Add(file);
+                }
             }
         }
 
