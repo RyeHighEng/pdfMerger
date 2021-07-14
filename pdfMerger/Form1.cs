@@ -38,7 +38,7 @@ namespace pdfMerger
             {
                 foreach (String file in ofd.FileNames)
                 {
-                    comboBox1.Items.Add(file);
+                    listBox1.Items.Add(file);
                 }
             }
         }
@@ -56,9 +56,9 @@ namespace pdfMerger
             
             SaveFileDialog sf = new SaveFileDialog();
             
-            for (i = 0; i < comboBox1.Items.Count; i++)
+            for (i = 0; i < listBox1.Items.Count; i++)
             {
-                pdfs.Add(comboBox1.GetItemText(comboBox1.Items[i]));
+                pdfs.Add(listBox1.GetItemText(listBox1.Items[i]));
             }
             using (PdfDocument targetDoc = new PdfDocument())
             {
@@ -85,29 +85,29 @@ namespace pdfMerger
         }
         private void clear_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
+            listBox1.Items.Clear();
         }
         public void MoveItem(int direction)
         {
             // Checking selected item
-            if (comboBox1.SelectedItem == null || comboBox1.SelectedIndex < 0)
+            if (listBox1.SelectedItem == null || listBox1.SelectedIndex < 0)
                 return; // No selected item - nothing to do
 
             // Calculate new index using move direction
-            int newIndex = comboBox1.SelectedIndex + direction;
+            int newIndex = listBox1.SelectedIndex + direction;
 
             // Checking bounds of the range
-            if (newIndex < 0 || newIndex >= comboBox1.Items.Count)
+            if (newIndex < 0 || newIndex >= listBox1.Items.Count)
                 return; // Index out of range - nothing to do
 
-            object selected = comboBox1.SelectedItem;
+            object selected = listBox1.SelectedItem;
 
             // Removing removable element
-            comboBox1.Items.Remove(selected);
+            listBox1.Items.Remove(selected);
             // Insert it in new position
-            comboBox1.Items.Insert(newIndex, selected);
+            listBox1.Items.Insert(newIndex, selected);
             // Restore selection
-            comboBox1.SetSelected(newIndex, true);
+            listBox1.SetSelected(newIndex, true);
         }
 
         private void up_Click(object sender, EventArgs e)

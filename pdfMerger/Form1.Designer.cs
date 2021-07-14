@@ -34,7 +34,7 @@ namespace pdfMerger
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.merge = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.up = new System.Windows.Forms.Button();
             this.down = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -77,14 +77,14 @@ namespace pdfMerger
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
-            // comboBox1
+            // listBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 16;
-            this.comboBox1.Location = new System.Drawing.Point(43, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(976, 436);
-            this.comboBox1.TabIndex = 5;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(43, 71);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(976, 436);
+            this.listBox1.TabIndex = 5;
             // 
             // up
             // 
@@ -115,7 +115,7 @@ namespace pdfMerger
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.down);
             this.Controls.Add(this.up);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.merge);
             this.Controls.Add(this.open);
@@ -133,7 +133,7 @@ namespace pdfMerger
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button merge;
         private System.Windows.Forms.Button clear;
-        private System.Windows.Forms.ListBox comboBox1;
+        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button up;
         private System.Windows.Forms.Button down;
     }
