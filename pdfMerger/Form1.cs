@@ -87,16 +87,6 @@ namespace pdfMerger
         {
             comboBox1.Items.Clear();
         }
-        public void MoveUp()
-        {
-            MoveItem(-1);
-        }
-
-        public void MoveDown()
-        {
-            MoveItem(1);
-        }
-
         public void MoveItem(int direction)
         {
             // Checking selected item
