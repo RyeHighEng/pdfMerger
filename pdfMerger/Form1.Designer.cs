@@ -32,17 +32,19 @@ namespace pdfMerger
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.open = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.merge = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
-            this.fname = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ListBox();
+            this.up = new System.Windows.Forms.Button();
+            this.down = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // open
             // 
-            this.open.Location = new System.Drawing.Point(33, 27);
+            this.open.Location = new System.Drawing.Point(44, 33);
+            this.open.Margin = new System.Windows.Forms.Padding(4);
             this.open.Name = "open";
-            this.open.Size = new System.Drawing.Size(92, 23);
+            this.open.Size = new System.Drawing.Size(123, 28);
             this.open.TabIndex = 1;
             this.open.Text = "Open File";
             this.open.UseVisualStyleBackColor = true;
@@ -53,22 +55,12 @@ namespace pdfMerger
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownHeight = 744;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Location = new System.Drawing.Point(33, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(744, 293);
-            this.comboBox1.TabIndex = 2;
-            // 
             // merge
             // 
-            this.merge.Location = new System.Drawing.Point(131, 27);
+            this.merge.Location = new System.Drawing.Point(175, 33);
+            this.merge.Margin = new System.Windows.Forms.Padding(4);
             this.merge.Name = "merge";
-            this.merge.Size = new System.Drawing.Size(95, 23);
+            this.merge.Size = new System.Drawing.Size(127, 28);
             this.merge.TabIndex = 3;
             this.merge.Text = "Merge PDF\'s";
             this.merge.UseVisualStyleBackColor = true;
@@ -76,47 +68,74 @@ namespace pdfMerger
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(232, 27);
+            this.clear.Location = new System.Drawing.Point(310, 33);
+            this.clear.Margin = new System.Windows.Forms.Padding(4);
             this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(88, 23);
+            this.clear.Size = new System.Drawing.Size(117, 28);
             this.clear.TabIndex = 4;
             this.clear.Text = "Clear Items";
             this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
-            // fname
+            // comboBox1
             // 
-            this.fname.Location = new System.Drawing.Point(341, 28);
-            this.fname.Name = "fname";
-            this.fname.Size = new System.Drawing.Size(435, 20);
-            this.fname.TabIndex = 5;
-            this.fname.Text = "OutputName";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 16;
+            this.comboBox1.Location = new System.Drawing.Point(43, 71);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(976, 436);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // up
+            // 
+            this.up.Location = new System.Drawing.Point(753, 36);
+            this.up.Margin = new System.Windows.Forms.Padding(4);
+            this.up.Name = "up";
+            this.up.Size = new System.Drawing.Size(117, 28);
+            this.up.TabIndex = 6;
+            this.up.Text = "Move Up";
+            this.up.UseVisualStyleBackColor = true;
+            this.up.Click += new System.EventHandler(this.up_Click);
+            // 
+            // down
+            // 
+            this.down.Location = new System.Drawing.Point(878, 36);
+            this.down.Margin = new System.Windows.Forms.Padding(4);
+            this.down.Name = "down";
+            this.down.Size = new System.Drawing.Size(117, 28);
+            this.down.TabIndex = 7;
+            this.down.Text = "Move Down";
+            this.down.UseVisualStyleBackColor = true;
+            this.down.Click += new System.EventHandler(this.down_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.fname);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.down);
+            this.Controls.Add(this.up);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.merge);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.open);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PDF Merger";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button open;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button merge;
         private System.Windows.Forms.Button clear;
-        private System.Windows.Forms.TextBox fname;
+        private System.Windows.Forms.ListBox comboBox1;
+        private System.Windows.Forms.Button up;
+        private System.Windows.Forms.Button down;
     }
 }
 
